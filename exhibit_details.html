@@ -2,38 +2,142 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Exhibit Details | Communication History</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Neural Era | Deep Dive Exhibit</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
-        body { font-family: 'Space Grotesk', sans-serif; background: #000; }
-        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        :root {
+            --bg: #000000;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .space-font { font-family: 'Space Grotesk', sans-serif; }
+
+        /* Animated Gradient Background */
+        .neural-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #000 70%);
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: var(--accent-blue);
+            transform: scale(1.02);
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     </style>
 </head>
-<body class="text-white overflow-x-hidden">
+<body>
 
-    <nav class="p-10"><a href="index.html" class="text-blue-500 font-bold tracking-tighter uppercase underline decoration-2 underline-offset-8">← Return to Lobby</a></nav>
+    <div class="neural-bg"></div>
 
-    <main class="p-10 max-w-7xl mx-auto">
-        <div class="mb-20">
-            <h1 class="text-9xl font-bold uppercase tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">The Neural<br>Era</h1>
-            <p class="text-gray-500 mt-6 text-xl tracking-widest uppercase">Deep Dive: Artificial Intelligence & Connectivity</p>
-        </div>
+    <nav class="p-8 flex justify-between items-center border-b border-white/10">
+        <a href="index.html" class="space-font uppercase font-black tracking-tighter text-blue-500 hover:text-white transition">
+            ← Exit to Lobby
+        </a>
+        <div class="text-[10px] uppercase tracking-[0.4em] text-gray-500 font-bold">Exhibit D // Room 404</div>
+    </nav>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div class="glass p-10 hover:bg-blue-600 transition duration-500">
-                <h3 class="text-2xl font-bold mb-4 uppercase text-blue-400">Synthesis</h3>
-                <p class="text-gray-400">Communication has evolved from sending messages to generating meaning through AI models.</p>
+    <main class="max-w-6xl mx-auto py-20 px-6">
+        
+        <header class="mb-20" data-aos="fade-up">
+            <span class="text-purple-500 font-bold uppercase tracking-widest text-sm">Special Collection</span>
+            <h1 class="space-font text-7xl md:text-9xl font-black uppercase leading-none mt-4 mb-8">
+                The <span class="gradient-text">Neural</span><br>Era
+            </h1>
+            <p class="text-xl text-gray-400 max-w-2xl border-l-4 border-purple-600 pl-6">
+                Exploring the transition from human-to-human interaction to the era of AI synthesis and the global neural network.
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <div class="space-y-8">
+                <div class="glass-card p-10" data-aos="fade-right">
+                    <h3 class="space-font text-2xl font-bold uppercase mb-4 text-blue-400">Synthesis vs. Transmission</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Historically, communication was about <strong>Transmission</strong>—moving a message from point A to point B. In the Neural Era, communication is about <strong>Synthesis</strong>—where AI interprets, summarizes, and generates new meaning in real-time.
+                    </p>
+                </div>
+
+                <div class="glass-card p-10" data-aos="fade-right" data-aos-delay="200">
+                    <h3 class="space-font text-2xl font-bold uppercase mb-4">Cialdini's Authority</h3>
+                    <p class="text-gray-400 leading-relaxed italic">
+                        "The Sage archetype utilizes the principle of Authority to transform raw data into wisdom."
+                    </p>
+                    <p class="mt-4 text-sm text-gray-500">
+                        This exhibit leverages expert timelines and technical data to establish the Museum's role as a scholarly guide.
+                    </p>
+                </div>
             </div>
-            <div class="glass p-10 border-t-4 border-blue-500">
-                <h3 class="text-2xl font-bold mb-4 uppercase">The Cialdini Factor</h3>
-                <p class="text-gray-400">By using the Principle of Liking and Social Proof, modern technology keeps users connected longer than ever before.</p>
+
+            <div class="glass-card p-10 flex flex-col justify-between" data-aos="fade-left">
+                <div>
+                    <h3 class="space-font text-2xl font-bold uppercase mb-6">Current Artifacts</h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between border-b border-white/10 pb-2">
+                            <span class="text-gray-300">Large Language Models</span>
+                            <span class="text-blue-500 font-bold">ACTIVE</span>
+                        </li>
+                        <li class="flex justify-between border-b border-white/10 pb-2">
+                            <span class="text-gray-300">Packet Switching</span>
+                            <span class="text-gray-600 font-bold">LEGACY</span>
+                        </li>
+                        <li class="flex justify-between border-b border-white/10 pb-2">
+                            <span class="text-gray-300">Optic Fiber Latency</span>
+                            <span class="text-blue-500 font-bold">0.02ms</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-12 bg-white text-black p-8">
+                    <p class="space-font font-black uppercase text-xl leading-tight">
+                        Orchestration is the new creation. 
+                    </p>
+                    <p class="mt-2 text-sm">
+                        As directors of AI, we no longer just write; we conduct.
+                    </p>
+                </div>
             </div>
-            <div class="glass p-10 bg-white text-black">
-                <h3 class="text-2xl font-bold mb-4 uppercase">Professor Review Note</h3>
-                <p class="italic">This exhibit demonstrates the "Orchestration" of AI tools to build a beautiful informational product.</p>
-            </div>
+
         </div>
     </main>
+
+    <footer class="p-10 text-center border-t border-white/10 mt-20">
+        <p class="text-[10px] uppercase tracking-[0.5em] text-gray-600">Architected for NJIT // Professor Williams</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000 });
+    </script>
 </body>
 </html>
