@@ -27,4 +27,7 @@ To establish trust, the museum utilizes the **Principle of Authority**. By citin
 * `/assets/` - High-fidelity AI-generated architectural assets.
 * `/docs/research.md` - Full research bibliography and orchestration logs.
 
+  ---
+*“Communication is the skin of the human nervous system. As the waves become invisible, our connection becomes eternal.”*
+
 
