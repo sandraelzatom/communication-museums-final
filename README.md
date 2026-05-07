@@ -27,5 +27,4 @@ To establish trust, the museum utilizes the **Principle of Authority**. By citin
 * `/assets/` - High-fidelity AI-generated architectural assets.
 * `/docs/research.md` - Full research bibliography and orchestration logs.
 
----
-*Created as a final project demonstrating AI Orchestration and Design Logic.*
+
