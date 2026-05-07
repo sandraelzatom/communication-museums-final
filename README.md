@@ -1,22 +1,32 @@
-# Museum of Human Connectivity: From Echoes to Electrons
-**Student Name:** [Sandra Elza Thomas]
-**Presentation Date:** May 8, 2026
+# Museum of Human Connectivity: Echoes to Electrons
+**Author:** [Sandra Elza Thomas]
+**Institution:** NJIT
+**Course:** IS-117004
+**Instructor:** Professor Williams
 
-## 🏛️ Project Overview
-This museum is a guided informational product exploring the history of communication technology. It is built using a **Swiss Design System** to ensure visual coherence and a professional, "Sage" brand identity.
+## 🏛️ Project Vision
+"Echoes to Electrons" is a digital informational product designed to guide visitors through the high-velocity evolution of human communication. By blending historical milestones with modern AI synthesis, this project demonstrates how technology has consistently shrunk the distance between human minds.
 
-## 🎨 Design Logic
-* **Design Style:** Swiss/International Typographic Style. I used bold, sans-serif typography (Inter) and a strict 12-column grid to organize complex historical data.
-* **Brand Archetype:** **The Sage**. The tone is educational, authoritative, and clear, guiding the visitor through history with wisdom.
-* **Cialdini Principle:** **Authority**. By using curated timelines, expert quotes (e.g., Marshall McLuhan), and verified historical facts, the site establishes trust with the visitor.
+## 🛠️ The Orchestration Framework
+Following the project rubric, I have applied the following frameworks:
 
-## 🤖 AI Orchestration Process
-I acted as the **Director/Orchestrator** while using AI as a specialist tool:
-1.  **Research:** Used AI to synthesize 2,000 years of communication history into four distinct "Exhibits."
-2.  **Design Judgment:** I directed the AI to generate CSS layouts specifically following the Swiss Grid rules.
-3.  **Refinement:** I used AI to critique the visual hierarchy and suggest the "Animate On Scroll" (AOS) triggers to make the site feel modern and interactive.
+### 1. Brand Archetype: The Sage
+The site adopts the **Sage** archetype. The tone is enlightened, objective, and authoritative. The design uses high-contrast Swiss grids to present information as curated wisdom rather than raw data.
 
-## 📂 Site Map
-* `index.html`: The Grand Lobby and Main Narrative Route.
-* `exhibit-details.html`: Deep-dive companion page on the Digital Revolution.
-* `docs/research.md`: Detailed research notes and concept planning.
+### 2. Design System: Swiss Modernism
+I implemented the **International Typographic Style** (Swiss Style):
+* **Typography:** Bold use of *Space Grotesk* for hierarchy and *Inter* for readability.
+* **Grid:** A structured layout that provides visual logic to the historical narrative.
+* **Color Logic:** A vibrant, color-coded "tour" that uses light as a metaphor for information flow.
+
+### 3. Cialdini Principle: Authority
+To establish trust, the museum utilizes the **Principle of Authority**. By citing verified historical epochs (Cuneiform to AI) and using professional architectural visualizations, the product establishes immediate credibility with the user.
+
+## 📂 Repository Structure
+* `/index.html` - The primary animated "Tour" lobby.
+* `/exhibit_details.html` - Deep-dive exhibit on the Neural Era.
+* `/assets/` - High-fidelity AI-generated architectural assets.
+* `/docs/research.md` - Full research bibliography and orchestration logs.
+
+---
+*Created as a final project demonstrating AI Orchestration and Design Logic.*
