@@ -1,6 +1,5 @@
 # Museum of Human Connectivity: Echoes to Electrons
 **Author:** [Sandra Elza Thomas]
-**Institution:** NJIT
 **Course:** IS-117004
 **Instructor:** Professor Williams
 
