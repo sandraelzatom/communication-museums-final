@@ -1,0 +1,65 @@
+:root {
+    /* Default Theme (Telegraph) */
+    --accent: #ff5f1f;
+    --bg-dark: #080808;
+    --glass: rgba(255, 255, 255, 0.03);
+    --text-dim: #888;
+    --transition-smooth: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #fff;
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Glassmorphic Containers */
+.glass-panel {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+/* Dynamic Content Sections */
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+}
+
+.content-box {
+    max-width: 600px;
+    z-index: 2;
+}
+
+/* Typography */
+h1, h2 {
+    font-weight: 700;
+    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+}
+
+.label-mono {
+    font-family: 'Space Mono', monospace;
+    color: var(--accent);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+/* Decorative Background Grid */
+.bg-grid {
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+}
