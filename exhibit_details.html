@@ -1,26 +1,38 @@
-<style>
-    .glow-container {
-        background: radial-gradient(circle at center, #1a2a6c, #b21f1f, #fdbb2d); /* Stunning tri-color gradient */
-        background-size: 400% 400%;
-        animation: gradientMove 15s ease infinite;
-    }
-    @keyframes gradientMove {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-    .floating { animation: floating 3s ease-in-out infinite; }
-    @keyframes floating {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
-        100% { transform: translateY(0px); }
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exhibit Detail | Museum of Echoes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="detail-view">
+    <a href="index.html" class="back-btn">← Return to Gallery</a>
+    
+    <main class="detail-container">
+        <h1 id="exhibit-title">Loading...</h1>
+        <div id="exhibit-content" class="fade-in">
+            </div>
+    </main>
 
-<div class="glow-container">
-    <div class="content floating">
-        <img src="assets/bakelite radio.jpg" class="stunning-shadow">
-        <h2>The Ethereal Voice</h2>
-        <p>Harnessing the invisible waves of the atmosphere...</p>
-    </div>
-</div>
+    <script>
+        const data = {
+            telegraph: {
+                title: "The Telegraph (1837)",
+                body: "Samuel Morse and Alfred Vail revolutionized communication. The world went from weeks of waiting to seconds."
+            },
+            radio: {
+                title: "The Radio (1895)",
+                body: "Guglielmo Marconi proved that the air could carry information. It was the birth of mass media."
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const item = params.get('item');
+
+        if(data[item]) {
+            document.getElementById('exhibit-title').innerText = data[item].title;
+            document.getElementById('exhibit-content').innerHTML = `<p>${data[item].body}</p>`;
+        }
+    </script>
+</body>
+</html>
