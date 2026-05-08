@@ -3,83 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Human Signal | An Evolutionary Journey</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        :root {
-            --neural-blue: #00d2ff;
-            --electric-indigo: #3a7bd5;
-            --industrial-gold: #c5a059;
-            --deep-space: #0a0a0c;
-        }
-        body { 
-            background-color: var(--deep-space); 
-            color: white; 
-            font-family: 'Space Grotesk', sans-serif;
-            margin: 0;
-            overflow-x: hidden;
-        }
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.3), var(--deep-space)), url('assets/hero-bg.jpg');
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 5rem;
-            background: linear-gradient(to right, #fff, var(--neural-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 0;
-        }
-        .timeline-section { padding: 100px 5%; }
-        .exhibit-card {
-            background: rgba(255,255,255,0.03);
-            border-left: 4px solid var(--industrial-gold);
-            padding: 40px;
-            margin-bottom: 50px;
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            transition: transform 0.3s ease;
-        }
-        .exhibit-card:hover { transform: scale(1.02); background: rgba(255,255,255,0.07); }
-        .exhibit-card img { width: 400px; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-    </style>
+    <title>Museum of Echoes | A History of Signals</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <nav class="navbar">
+        <div class="logo">MUSEUM OF ECHOES</div>
+        <ul class="nav-links">
+            <li><a href="#telegraph">Telegraph</a></li>
+            <li><a href="#radio">Radio</a></li>
+            <li><a href="#macintosh">Macintosh</a></li>
+            <li><a href="research.html">Research</a></li>
+        </ul>
+    </nav>
+
     <header class="hero">
-        <div data-aos="zoom-out" data-aos-duration="2000">
-            <p style="letter-spacing: 5px; color: var(--neural-blue);">VIRTUAL CURATION</p>
-            <h1>THE HUMAN SIGNAL</h1>
-            <p>An Evolutionary Journey Through Connection</p>
+        <div class="hero-content">
+            <h1 class="glow-text">The Thread That Connects</h1>
+            <p>From Morse code to the digital age.</p>
+            <div class="scroll-indicator"></div>
         </div>
     </header>
 
-    <section class="timeline-section">
-        <div class="exhibit-card" data-aos="fade-right">
-            <img src="assets/telegraph.jpg" alt="Telegraph">
-            <div>
-                <h2 style="color: var(--industrial-gold);">Phase I: The Wired Pulse</h2>
-                <p>The dawn of near-instantaneous global signaling. Where code first conquered distance.</p>
-            </div>
-        </div>
-
-        <div class="exhibit-card" data-aos="fade-left" style="border-left-color: var(--neural-blue);">
-            <img src="assets/macnotish.jpg" alt="Macintosh">
-            <div>
-                <h2 style="color: var(--neural-blue);">Phase III: The Neural Ghost</h2>
-                <p>The transition into the synthesized era, where the signal becomes an extension of thought.</p>
-            </div>
+    <section id="telegraph" class="exhibit-section">
+        <div class="content-wrapper">
+            <span class="chapter-num">Chapter One</span>
+            <h2>The Telegraph</h2>
+            <div class="signal-line"></div>
+            <p>Before the telegraph, a message could travel no faster than a horse. In 1837, the world grew smaller.</p>
+            <a href="exhibit-detail.html?item=telegraph" class="explore-btn">Enter Exhibit</a>
         </div>
     </section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
+    <section id="radio" class="exhibit-section">
+        <div class="content-wrapper">
+            <span class="chapter-num">Chapter Two</span>
+            <h2>Radio Waves</h2>
+            <div class="pulse-circle"></div>
+            <p>The air became alive with invisible signals, carrying voices across oceans without a single wire.</p>
+            <a href="exhibit-detail.html?item=radio" class="explore-btn">Enter Exhibit</a>
+        </div>
+    </section>
+
+    <section id="macintosh" class="exhibit-section">
+        <div class="content-wrapper">
+            <span class="chapter-num">Chapter Three</span>
+            <h2>The Macintosh</h2>
+            <div class="digital-glow"></div>
+            <p>The dawn of personal computing. A tool for the mind that changed how we create forever.</p>
+            <a href="exhibit-detail.html?item=macintosh" class="explore-btn">Enter Exhibit</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Museum of Echoes. Every signal is an act of faith.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
