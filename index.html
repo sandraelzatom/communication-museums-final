@@ -3,64 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Museum of Echoes | A History of Signals</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Museum of Echoes | Digital Exhibit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0d0d0d;
+            --telegraph-orange: #ff5f1f;
+            --radio-blue: #00d4ff;
+            --mac-green: #39ff14;
+            --text-main: #e0e0e0;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Smooth Scroll behavior */
+        html { scroll-behavior: smooth; }
+
+        /* Background Animated Signals */
+        .background-grid {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 40px 40px;
+            z-index: -1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass);
+        }
+
+        .logo { font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--telegraph-orange); }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 10vw, 6rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, #666);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Exhibit Sections */
+        .section {
+            min-height: 100vh;
+            padding: 10vh 10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 50px;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .section.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .visual-container {
+            position: relative;
+            height: 400px;
+            background: var(--glass);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden;
+        }
+
+        /* Animated Signal Lines for Telegraph */
+        .dot-dash-line {
+            width: 80%;
+            height: 2px;
+            background: repeating-linear-gradient(90deg, var(--telegraph-orange) 0, var(--telegraph-orange) 10px, transparent 10px, transparent 20px);
+            animation: moveSignal 2s linear infinite;
+        }
+
+        /* Animated Pulse for Radio */
+        .radio-pulse {
+            width: 50px; height: 50px;
+            border: 2px solid var(--radio-blue);
+            border-radius: 50%;
+            animation: ripple 2s infinite;
+        }
+
+        @keyframes moveSignal {
+            from { background-position: 0 0; }
+            to { background-position: 40px 0; }
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(4); opacity: 0; }
+        }
+
+        .content h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .chapter-label {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--telegraph-orange);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .btn {
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        footer {
+            padding: 100px;
+            text-align: center;
+            border-top: 1px solid var(--glass);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .section { grid-template-columns: 1fr; text-align: center; }
+            .visual-container { order: -1; }
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">MUSEUM OF ECHOES</div>
-        <ul class="nav-links">
-            <li><a href="#telegraph">Telegraph</a></li>
-            <li><a href="#radio">Radio</a></li>
-            <li><a href="#macintosh">Macintosh</a></li>
-            <li><a href="research.html">Research</a></li>
-        </ul>
+    <div class="background-grid"></div>
+
+    <nav>
+        <div class="logo">ECHOES</div>
+        <div class="menu">Timeline // Archives // Labs</div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1 class="glow-text">The Thread That Connects</h1>
-            <p>From Morse code to the digital age.</p>
-            <div class="scroll-indicator"></div>
-        </div>
+    <header>
+        <span class="chapter-label" style="color: gray;">A Digital Archive</span>
+        <h1 class="hero-title">Museum of <br> Signals</h1>
+        <p>The history of how we connected the world.</p>
     </header>
 
-    <section id="telegraph" class="exhibit-section">
-        <div class="content-wrapper">
-            <span class="chapter-num">Chapter One</span>
+    <section class="section" id="telegraph">
+        <div class="content">
+            <span class="chapter-label">Chapter 01</span>
             <h2>The Telegraph</h2>
-            <div class="signal-line"></div>
-            <p>Before the telegraph, a message could travel no faster than a horse. In 1837, the world grew smaller.</p>
-            <a href="exhibit-detail.html?item=telegraph" class="explore-btn">Enter Exhibit</a>
+            <p>In 1837, Samuel Morse turned electricity into language. By pulsing currents through a wire, we broke the barrier of distance forever.</p>
+            <button class="btn" onclick="window.location.href='exhibit-detail.html'">Explore Exhibit</button>
+        </div>
+        <div class="visual-container">
+            <div class="dot-dash-line"></div>
         </div>
     </section>
 
-    <section id="radio" class="exhibit-section">
-        <div class="content-wrapper">
-            <span class="chapter-num">Chapter Two</span>
+    <section class="section" id="radio">
+        <div class="visual-container">
+            <div class="radio-pulse"></div>
+            <div class="radio-pulse" style="animation-delay: 0.5s"></div>
+        </div>
+        <div class="content">
+            <span class="chapter-label" style="color: var(--radio-blue);">Chapter 02</span>
             <h2>Radio Waves</h2>
-            <div class="pulse-circle"></div>
-            <p>The air became alive with invisible signals, carrying voices across oceans without a single wire.</p>
-            <a href="exhibit-detail.html?item=radio" class="explore-btn">Enter Exhibit</a>
+            <p>Hertz and Marconi discovered that the air itself could carry thoughts. The "Invisible Thread" allowed us to broadcast across oceans.</p>
+            <button class="btn">Signal Research</button>
         </div>
     </section>
 
-    <section id="macintosh" class="exhibit-section">
-        <div class="content-wrapper">
-            <span class="chapter-num">Chapter Three</span>
+    <section class="section" id="digital">
+        <div class="content">
+            <span class="chapter-label" style="color: var(--mac-green);">Chapter 03</span>
             <h2>The Macintosh</h2>
-            <div class="digital-glow"></div>
-            <p>The dawn of personal computing. A tool for the mind that changed how we create forever.</p>
-            <a href="exhibit-detail.html?item=macintosh" class="explore-btn">Enter Exhibit</a>
+            <p>The transition from analog signals to digital logic. A personal revolution that fit a world of information onto a desk.</p>
+            <button class="btn">View Specs</button>
+        </div>
+        <div class="visual-container">
+            <div style="font-family: monospace; color: var(--mac-green); font-size: 0.8rem;">
+                01001000 01100101 01101100 01101100 01101111
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Museum of Echoes. Every signal is an act of faith.</p>
+        <p>&copy; 2026 Museum of Echoes. Built for the Digital Century.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Intersection Observer to trigger "Reveal" animations
+        const observerOptions = {
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Parallax effect on the background grid
+        window.addEventListener('scroll', () => {
+            const grid = document.querySelector('.background-grid');
+            let offset = window.pageYOffset;
+            grid.style.backgroundPositionY = offset * 0.5 + 'px';
+        });
+    </script>
 </body>
 </html>
